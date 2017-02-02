@@ -13,6 +13,7 @@
         <style>
           .img-responsive { display: initial; }
           td.avatar-box { width: 110px; }
+          .puntero { cursor: pointer; }
         </style>  
     </head>
 
@@ -42,12 +43,12 @@
               <tr>
                   <th>ID</th>
                   <th>Avatar</th>
-                  <th>Name</th>
+                  <th> <a ng-click="reverse = !reverse;" class="puntero">Name</a> </th>
                   <th>Sex</th>
                   <th>Color</th>
                   <th>Zord</th>
               </tr>
-              <tr ng-repeat="ranger in listadoRangers.rangers | filter:busqueda">
+              <tr ng-repeat="ranger in listadoRangers.rangers | filter:busqueda | orderBy:'name':reverse ">
                   <td>{{ ranger.id }}</td>
                   <td class="text-center avatar-box">
                     <img ng-src="{{ranger.avatar}}" class="img-responsive img-circle" style="width:100px"/>
