@@ -43,12 +43,12 @@
               <tr>
                   <th>ID</th>
                   <th>Avatar</th>
-                  <th> <a ng-click="reverse = !reverse;" class="puntero">Name</a> </th>
-                  <th>Sex</th>
+                  <th> <a ng-click="columna='name'; reverse = !reverse;" class="puntero">Name</a> </th>
+                  <th> <a ng-click="columna='sex'; reverse = !reverse;" class="puntero">Sex</a> </th>
                   <th>Color</th>
                   <th>Zord</th>
               </tr>
-              <tr ng-repeat="ranger in listadoRangers.rangers | filter:busqueda | orderBy:'name':reverse ">
+              <tr ng-repeat="ranger in listadoRangers.rangers | filter:busqueda | orderBy:columna:reverse ">
                   <td>{{ ranger.id }}</td>
                   <td class="text-center avatar-box">
                     <img ng-src="{{ranger.avatar}}" class="img-responsive img-circle" style="width:100px"/>
