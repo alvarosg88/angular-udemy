@@ -21,15 +21,11 @@
 
         <div class="container" ng-controller="mainCtrl">
             
-            <h1>Detectar IPs</h1>
-            <h4>Manejo de recursos online</h4>
+            <h1>{{ geo.name }}</h1>
+            <h2>{{ toCls(geo.main.temp) }} Cº</h2>
             <hr>
             
-            <br/><br/>
-            
             <h3 ng-bind-html="geo.geoplugin_city | unsafe"></h3>
-            
-            <br/><br/>
             
             {{ geo | json }}
 
