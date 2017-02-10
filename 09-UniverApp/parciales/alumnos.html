@@ -1,0 +1,26 @@
+<h1>Alumnos DB</h1>
+<p>
+	Esta es la página de Alumnos
+</p>
+<div class="row">
+  <div class="container">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+        </tr>
+        <tr ng-repeat="alumno in alumnos | limitTo: position | limitTo: -5">
+          <td>{{ alumno.codigo }}</td>
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.telefono | phone }}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-12">
+      <button class="btn btn-default" ng-click="goPrev()" id="btn-prev">Anterior</button>
+      <button class="btn btn-primary" ng-click="goNext()" id="btn-next">Siguiente</button>
+    </div>
+  </div>
+</div>
