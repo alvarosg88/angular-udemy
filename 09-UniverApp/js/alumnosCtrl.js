@@ -9,26 +9,33 @@ app.controller('alumnosCtrl', ['$scope','$http', function($scope,$http){
       $scope.alumnos = data;
       
     });
+    
+    function setPrimary(button){
+        button.className = "btn btn-primary";
+    }
+    
+    var myButtons = [
+        document.getElementById('btn-next'),
+        document.getElementById('btn-prev')
+    ];
   
     $scope.goNext = function(){
       if( $scope.alumnos.length > $scope.position ){
         $scope.position += 5;
-        document.getElementById('btn-prev').className = "btn btn-primary";
-        document.getElementById('btn-next').className = "btn btn-primary";
+        myButtons.forEach(setPrimary)
       }
       else{
-        document.getElementById('btn-next').className = "btn btn-default";
+        myButtons[0].className = "btn btn-default";
       }
     }
     
     $scope.goPrev = function(){
       if( $scope.position > 5 ){
         $scope.position -= 5;
-        document.getElementById('btn-prev').className = "btn btn-primary";
-        document.getElementById('btn-next').className = "btn btn-primary";
+        myButtons.forEach(setPrimary)
       }
       else{
-        document.getElementById('btn-prev').className = "btn btn-default";
+        myButtons[1].className = "btn btn-default";
       }
     }
 
