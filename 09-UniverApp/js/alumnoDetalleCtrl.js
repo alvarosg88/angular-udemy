@@ -1,4 +1,6 @@
 app.controller('alumnoDetalleCtrl', ['$scope','$http', '$routeParams',function($scope, $http, $routeParams){
+    
+    $scope.setActive("mAlumnos");
   
     var codigo = $routeParams.codigo;
     $scope.alumno = {};
