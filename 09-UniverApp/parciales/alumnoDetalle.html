@@ -4,25 +4,29 @@
     <div class="container">
         <div class="col-md-12">
         
-        <form action="">
-          <div class="form-group">
+        <div class="alert alert-success animated fadeIn" role="alert" ng-show="showSuccess">Los datos han sido guardados correctamente.</div>
+
+        <div class="alert alert-danger animated fadeIn" role="alert" ng-show="showDanger">Ha ocurrido un error. Inténtalo de nuevo más tarde.</div>
+
+        <form ng-submit="guardarAlumno()">
+          <div class="form-group" ng-hide="nuevoAlumno">
             <label for="id">Código</label>
             <input type="text" class="form-control" id="id" name="id" placeholder="Código" ng-model="alumno.codigo" readonly="readonly"/>
           </div>
          
           <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" ng-model="alumno.nombre"/>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del alumno" ng-model="alumno.nombre" required/>
           </div>
           
           <div class="form-group">
             <label for="direccion">Dirección</label>
-              <textarea class="form-control" id="direccion" name="direccion" placeholder="Dirección" ng-model="alumno.direccion" rows="5"></textarea>
+              <textarea class="form-control" id="direccion" name="direccion" placeholder="Dirección del alumno" ng-model="alumno.direccion" rows="5" required></textarea>
           </div>  
           
           <div class="form-group">
             <label for="telefono">Teléfono</label>
-            <input type="text" class="form-control" id="telefono" name="telefono" ng-model="alumno.telefono" ui-mask="{{tlfnMask}}"/>
+            <input type="text" class="form-control" id="telefono" name="telefono" ng-model="alumno.telefono" ui-mask="{{tlfnMask}}" required/>
           </div>
           
           <a href="#/alumnos" class="btn btn-default"><i class="fa fa-hand-o-left"></i>&nbsp;&nbsp;Volver</a>
